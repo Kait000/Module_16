@@ -44,7 +44,7 @@ async def update_user(user_id: Annotated[int, Path(description='Введите u
 
 
 @app.delete('/user/{user_id}')
-async def delete__user(user_id: Annotated[int, Path(description='Введите user_id')]) -> str:
+async def delete_user(user_id: Annotated[int, Path(description='Введите user_id')]) -> str:
     """Удаляет запись из словаря с индексом {user_id}"""
     for key in users:
         if key == str(user_id):
