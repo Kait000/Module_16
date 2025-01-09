@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block crud_container %}
+    {% if user %}
+        <article class="card container fluid"></article>
+        <br>
+        <!-- Напишите свой код здесь (Вывод свойств объекта User) -->
+        <h1>ID: {{user.id}}</h1>
+        <p><b>Name:</b> {{user.username}}</p>
+        <p><b>Age:</b> {{user.age}}</p>
+    {% else %}
+            <section class="container-fluid">
+                <h2 align="center"> Users </h2>
+                <br>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <!-- Напишите свой код здесь (перебор пользователей) -->
+                        {% for user in users %}
+                            <a href="/user/{{user.id}}">{{user.id}}. {{user.username}}</a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+    {% endif %}
+{% endblock %}
